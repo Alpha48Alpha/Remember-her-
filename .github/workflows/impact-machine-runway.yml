@@ -45,3 +45,50 @@ jobs:
         with:
           name: dist
           path: dist/
+name: Impact Machine Runway
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build-trailer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate AI copy
+        run: npm run ai:copy
+
+      - name: Generate Runway video assets
+        env:
+          RUNWAYML_API_SECRET: ${{ secrets.RUNWAYML_API_SECRET }}
+        run: npm run ai:video
+
+      - name: Assemble final trailer bundle
+        run: npm run ai:assemble
+
+      - name: Build production app
+        run: npm run build
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
