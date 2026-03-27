@@ -1,0 +1,50 @@
+[
+  {
+    "id": "shot_01",
+    "timecode": "0:00-0:05",
+    "label": "Opening Documentary Reality",
+    "prompt": "cinematic documentary footage of a female humanitarian filming in a conflict zone at night, handheld camera, dust and smoke in the air, desaturated colors, realistic war-zone atmosphere, grounded prestige thriller aesthetic, 35mm film look, emotional realism, natural skin tones"
+  },
+  {
+    "id": "shot_02",
+    "timecode": "0:05-0:11",
+    "label": "Disappearance",
+    "prompt": "night conflict footage, handheld realism, humanitarian chaos, tense but restrained, prestige thriller look"
+  },
+  {
+    "id": "shot_03",
+    "timecode": "0:11-0:15",
+    "label": "Attack Glitch",
+    "prompt": "digital camera glitch with structured signal distortion, female figure falling in a conflict zone, motion blur, cinematic tension, no graphic gore"
+  },
+  {
+    "id": "shot_04",
+    "timecode": "0:15-0:22",
+    "label": "Recovery and Erasure",
+    "prompt": "woman waking in a cold clinical recovery room, safe house atmosphere, identity erased, minimalist prestige thriller cinematography"
+  },
+  {
+    "id": "shot_05",
+    "timecode": "0:22-0:31",
+    "label": "Ezekiel Decode",
+    "prompt": "inventor workshop at night, practical lights, papers, electronics, decoding mysterious documents, warm contrast against darkness, premium film style"
+  },
+  {
+    "id": "shot_06",
+    "timecode": "0:31-0:42",
+    "label": "The Signal",
+    "prompt": "elegant structured signal visualization, dark gold and white highlights, subtle AI recognition motif, prestige sci-thriller realism"
+  },
+  {
+    "id": "shot_07",
+    "timecode": "0:42-0:52",
+    "label": "Global Recognition",
+    "prompt": "people in Tokyo, Lagos, New York, Israel, and Sao Paulo pausing mid-motion as if something invisible moved through them, realistic emotions, subtle recognition, cinematic slow motion, global scope, prestige tone"
+  },
+  {
+    "id": "shot_08",
+    "timecode": "0:52-1:00",
+    "label": "Message and Title",
+    "prompt": "pure black cinematic title card with faint gold pulse and subtle grain, luxury serif typography, prestige streaming thriller branding"
+  }
+]
