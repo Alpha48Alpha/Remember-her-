@@ -1,0 +1,24 @@
+{
+  "name": "remember-her-streaming-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "ai:copy": "node scripts/impact-ai-sync.mjs",
+    "ai:video": "node scripts/generate-runway-assets.mjs",
+    "ai:assemble": "node scripts/assemble-final-trailer.mjs",
+    "trailer:oneclick": "npm run ai:copy && npm run ai:video && npm run ai:assemble && npm run build"
+  },
+  "dependencies": {
+    "@runwayml/sdk": "^1.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "vite": "^5.4.10"
+  }
+}
