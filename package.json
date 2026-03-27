@@ -1,0 +1,15 @@
+{
+  "name": "remember-her",
+  "version": "1.0.0",
+  "description": "RunwayML trailer clip generator",
+  "type": "module",
+  "scripts": {
+    "generate-clips": "node scripts/generate-clips.js"
+  },
+  "dependencies": {
+    "@runwayml/sdk": "^3.17.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

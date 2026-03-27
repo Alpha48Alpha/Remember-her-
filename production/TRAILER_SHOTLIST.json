@@ -1,0 +1,32 @@
+[
+  {
+    "id": "shot_01_opening",
+    "label": "Opening — Memory Flood",
+    "timecode": "0:00-0:05",
+    "prompt": "Extreme close-up of a woman's eye, tears welling, reflections of fading memories swirling inside the iris, cinematic, 4K, golden hour lighting"
+  },
+  {
+    "id": "shot_02_hands",
+    "label": "Hands — Last Touch",
+    "timecode": "0:05-0:10",
+    "prompt": "Two hands slowly letting go, fingers slipping apart in slow motion, warm soft bokeh background, emotional, cinematic lighting"
+  },
+  {
+    "id": "shot_03_empty_room",
+    "label": "Empty Room — Absence",
+    "timecode": "0:10-0:15",
+    "prompt": "Sunlit empty bedroom, dust particles floating, a woman's belongings still on the dresser, quiet and melancholic, cinematic wide shot"
+  },
+  {
+    "id": "shot_04_photographs",
+    "label": "Photographs — Remembrance",
+    "timecode": "0:15-0:20",
+    "prompt": "Scattered photographs on a wooden floor, hands picking one up, close-up on a smiling face in the photo, warm nostalgic tones"
+  },
+  {
+    "id": "shot_05_horizon",
+    "label": "Horizon — Longing",
+    "timecode": "0:20-0:27",
+    "prompt": "Silhouette of a person standing at the ocean's edge at sunset, waves crashing softly, vast horizon, hopeful yet sorrowful mood, cinematic"
+  }
+]
