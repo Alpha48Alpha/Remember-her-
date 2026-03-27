@@ -45,3 +45,24 @@ jobs:
         with:
           name: dist
           path: dist/
+name: Impact Machine Runway
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: List media assets
+        run: |
+          echo "Voiceover: impact-machine-runway/voiceover.mp3"
+          echo "Music bed: impact-machine-runway/music-bed.mp3"
+          echo "Hero image: impact-machine-runway/hero.jpg"
+          for i in $(seq 1 9); do
+            echo "Scene $i: impact-machine-runway/scene-$i.jpg"
+          done
