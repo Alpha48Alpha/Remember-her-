@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_DIR = path.join(__dirname, 'output');
+const ASSETS_DIR = path.join(__dirname, '..', 'impact-machine-runway');
 
 if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -29,27 +30,57 @@ const client = new RunwayML({ apiKey });
 const POLL_INTERVAL_MS = 5000;
 const POLL_TIMEOUT_MS = 10 * 60 * 1000; // 10 minutes
 
-const prompts = [
-  { id: 'scene_01', text: 'A woman standing alone in a sun-lit field, cinematic, 4K' },
-  { id: 'scene_02', text: 'Old photographs scattered on a wooden table, slow zoom, cinematic' },
+/**
+ * Reads a local image file and returns a base64 data URI.
+ */
+function imageToDataUri(filePath) {
+  if (!fs.existsSync(filePath)) {
+    console.error(`[ai:video] ERROR: Required image not found: ${filePath}`);
+    process.exit(1);
+  }
+  const ext = path.extname(filePath).slice(1).toLowerCase();
+  const SUPPORTED = { jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp' };
+  const mimeType = SUPPORTED[ext];
+  if (!mimeType) {
+    console.error(`[ai:video] ERROR: Unsupported image format ".${ext}" for ${filePath}. Use jpg, jpeg, png, or webp.`);
+    process.exit(1);
+  }
+  const data = fs.readFileSync(filePath).toString('base64');
+  return `data:${mimeType};base64,${data}`;
+}
+
+const scenes = [
+  {
+    id: 'scene_01',
+    imagePath: path.join(ASSETS_DIR, 'scene-1.jpg'),
+    promptText: 'A woman standing alone in a sun-lit field, cinematic, 4K',
+  },
+  {
+    id: 'scene_02',
+    imagePath: path.join(ASSETS_DIR, 'scene-2.jpg'),
+    promptText: 'Old photographs scattered on a wooden table, slow zoom, cinematic',
+  },
 ];
 
 const manifest = [];
 
-for (const prompt of prompts) {
-  console.log(`[ai:video] Generating clip for "${prompt.id}"…`);
+for (const scene of scenes) {
+  console.log(`[ai:video] Generating clip for "${scene.id}"…`);
 
-  const task = await client.textToVideo.create({
+  const promptImage = imageToDataUri(scene.imagePath);
+
+  const task = await client.imageToVideo.create({
     model: 'gen3a_turbo',
-    promptText: prompt.text,
+    promptImage,
+    promptText: scene.promptText,
     duration: 5,
-    ratio: '1280:720',
+    ratio: '1280:768',
   });
 
   // Poll until the task completes, with a timeout guard.
-  let result = task;
+  let result = await client.tasks.retrieve(task.id);
   const deadline = Date.now() + POLL_TIMEOUT_MS;
-  while (result.status === 'RUNNING' || result.status === 'PENDING') {
+  while (result.status === 'RUNNING' || result.status === 'PENDING' || result.status === 'THROTTLED') {
     if (Date.now() > deadline) {
       console.error(`[ai:video] Timed out waiting for task ${result.id}.`);
       process.exit(1);
@@ -64,8 +95,8 @@ for (const prompt of prompts) {
   }
 
   const videoUrl = result.output?.[0];
-  manifest.push({ id: prompt.id, url: videoUrl });
-  console.log(`[ai:video] ✓ ${prompt.id}: ${videoUrl}`);
+  manifest.push({ id: scene.id, url: videoUrl });
+  console.log(`[ai:video] ✓ ${scene.id}: ${videoUrl}`);
 }
 
 const manifestPath = path.join(OUTPUT_DIR, 'video-manifest.json');
