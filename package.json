@@ -1,0 +1,8 @@
+{
+  "name": "remember-her",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "assemble": "node scripts/assemble-trailer.mjs"
+  }
+}
