@@ -1,0 +1,66 @@
+{
+  "updatedAt": "2026-03-27T19:16:44.641Z",
+  "mode": "fallback",
+  "trailer_summary": "Prestige global thriller trailer built from local production docs.",
+  "homepage_hook": "She went there to help. Then she disappeared. When she came back, she didn't exist.",
+  "investor_blurb": "A humanitarian returns from a conflict zone erased from every system, while a decoder uncovers a hidden signal meant for all of humanity.",
+  "trailer_captions": [
+    "She went there to help.",
+    "Then she disappeared.",
+    "When she came back…",
+    "…she didn't exist.",
+    "The signal was never lost.",
+    "We were."
+  ],
+  "shot_prompts": [
+    {
+      "shot": 1,
+      "description": "Aerial wide of a conflict zone at dusk — smoke rising over a city skyline",
+      "duration": "3s",
+      "tone": "ominous"
+    },
+    {
+      "shot": 2,
+      "description": "Close-up of a woman's eyes — determined, scanning a crowd",
+      "duration": "2s",
+      "tone": "intense"
+    },
+    {
+      "shot": 3,
+      "description": "Aid worker insignia being torn from a jacket — slow motion",
+      "duration": "2s",
+      "tone": "dread"
+    },
+    {
+      "shot": 4,
+      "description": "Terminal screen: 'RECORD NOT FOUND' — cursor blinking",
+      "duration": "2s",
+      "tone": "cold"
+    },
+    {
+      "shot": 5,
+      "description": "Woman walking through an airport — crowds blur around her, she is perfectly still",
+      "duration": "4s",
+      "tone": "eerie"
+    },
+    {
+      "shot": 6,
+      "description": "Decoder staring at oscilloscope — a signal pulses in the waveform",
+      "duration": "3s",
+      "tone": "discovery"
+    },
+    {
+      "shot": 7,
+      "description": "Rapid intercut: satellite dishes, data centers, faces on screens",
+      "duration": "3s",
+      "tone": "urgent"
+    },
+    {
+      "shot": 8,
+      "description": "Black frame — title card: REMEMBER HER",
+      "duration": "2s",
+      "tone": "reveal"
+    }
+  ],
+  "voiceover_script": "She went there to help.\n\nThen she disappeared.\n\nWhen she came back…\n\n…she didn't exist.\n\nNot in any record. Not in any system.\n\nBut someone remembered.\n\nAnd they left a signal.\n\nREMEMBER HER.\n\nComing soon to a screen near you.\n"
+}

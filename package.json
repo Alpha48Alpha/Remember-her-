@@ -1,0 +1,12 @@
+{
+  "name": "remember-her",
+  "version": "1.0.0",
+  "description": "AI-powered trailer production pipeline for Remember Her",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
