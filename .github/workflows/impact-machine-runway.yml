@@ -1,21 +1,47 @@
-name: Impact Machine Runway
+name: Impact Machine — Runway Trailer Pipeline
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  build-trailer:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: List media assets
-        run: |
-          echo "Voiceover: impact-machine-runway/voiceover.mp3"
-          echo "Music bed: impact-machine-runway/music-bed.mp3"
-          echo "Hero image: impact-machine-runway/hero.jpg"
-          for i in $(seq 1 9); do
-            echo "Scene $i: impact-machine-runway/scene-$i.jpg"
-          done
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate AI copy
+        run: npm run ai:copy
+
+      - name: Generate Runway video assets
+        env:
+          RUNWAYML_API_SECRET: ${{ secrets.RUNWAYML_API_SECRET }}
+        run: npm run ai:video
+
+      - name: Assemble final trailer bundle
+        run: npm run ai:assemble
+
+      - name: Build production app
+        run: npm run build
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
