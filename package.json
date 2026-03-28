@@ -10,6 +10,7 @@
     "ai:copy": "node scripts/impact-ai-sync.mjs",
     "ai:video": "node scripts/generate-runway-assets.mjs",
     "ai:assemble": "node scripts/assemble-final-trailer.mjs",
+    "test": "node --test",
     "trailer:oneclick": "npm run ai:copy && npm run ai:video && npm run ai:assemble && npm run build"
   },
   "dependencies": {
