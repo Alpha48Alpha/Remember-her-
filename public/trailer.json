@@ -2,5 +2,18 @@
   "generatedAt": null,
   "tagline": "Remember Her — a story that stays with you.",
   "description": "An intimate portrait of memory, love, and the echoes we leave behind.",
-  "scenes": []
+  "scenes": [],
+  "neuralTech": {
+    "sectionTitle": "Emerging Themes: Neural Technology & Human Perception",
+    "intro": "REMEMBER HER also enters into one of the most important conversations of our time: the intersection of human cognition and advancing technology.",
+    "experienceDescription": "The series explores Elizabeth Rothschild's personal experience with what she describes as unexplained cognitive disruption, irregular digital interactions, and the presence of structured information appearing without clear origin.",
+    "broaderTopics": [
+      "Neurotechnology development",
+      "Brain-computer interface research",
+      "Artificial intelligence integration",
+      "The future of human perception"
+    ],
+    "centralQuestion": "What happens as technology moves closer to the human mind?",
+    "personalStatement": "I'm not here to tell people what to believe. I'm here to share what I experienced — and why I think we need to be paying closer attention to how technology is evolving around the human mind."
+  }
 }
