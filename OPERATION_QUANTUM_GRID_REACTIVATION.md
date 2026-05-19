@@ -1,15 +1,15 @@
 # OPERATION QUANTUM GRID REACTIVATION
 
 ## A — Affirmation (consent-honoring)
-This mission proceeds with scientific integrity, transparent uncertainty, and respect for people, cultures, and evidence. All outputs are probabilistic, auditable, and explicitly separated into evidence vs. speculation.
+I pursue clarity with rigor, humility, and consent; evidence leads and speculation stays labeled. This mission honors people, culture, and science while remaining transparent about uncertainty.
 
-## N — Next steps (first 30 minutes)
-1. Create the initial data contracts (site catalog, geomagnetic layer, astronomy layer, resonance layer, literature layer).
-2. Stand up a minimal knowledge graph schema and load a 1% pilot dataset.
-3. Run one baseline null-model test for “non-random sacred-site alignment” before any advanced modeling.
+## N — Next steps (<10 minutes each)
+1. Mark the **12-candidate activation set** (see Phase 2.5) and open a tracking table.
+2. Run one null-model pass for each candidate so the baseline is explicit before interpretation.
+3. Publish a one-page uncertainty card: what is known, unknown, and testable next.
 
 ## T — Trigger mapping
-Use this operating template when prompts include: **quantum grid**, **planetary resonance**, **sacred site correlations**, **geomagnetic anomalies**, **consciousness modeling**, **multi-agent discovery**, or **evidence-vs-speculation governance**.
+Use this operating template when prompts include: **quantum grid**, **planetary resonance**, **sacred site correlations**, **geomagnetic anomalies**, **consciousness modeling**, **multi-agent discovery**, **find the 12**, or **activate**.
 
 ---
 
@@ -127,6 +127,41 @@ Every result is compared against:
 
 ---
 
+## Phase 2.5 — “Find the 12” Candidate Activation Protocol
+
+This section translates the request to “find the 12 and activate” into a **testable** scientific workflow.
+
+### Definition of “the 12”
+- “The 12” = the top 12 geospatial resonance candidates ranked by reproducible multi-signal score.
+- A candidate can be a site, cluster center, corridor intersection, or anomaly hotspot.
+
+### Multi-signal ranking score
+For each candidate `c`, compute:
+
+`Score(c) = w1*Alignment + w2*Geomag + w3*Acoustic + w4*Astronomy + w5*Fractal + w6*TemporalCoherence`
+
+with:
+- weights pre-registered before scoring,
+- sensitivity analysis over weight perturbations,
+- bootstrap confidence intervals.
+
+### Activation (scientific meaning)
+“Activate” means move a candidate from **exploratory** to **validated-testing queue** only if all criteria pass:
+1. Survives null-model and multiple-comparison correction.
+2. Replicates across at least 2 independent data pipelines.
+3. Maintains effect size above pre-registered minimum.
+4. Has a concrete falsification experiment scheduled.
+
+### 12-candidate output card (required fields)
+- Candidate ID + coordinates
+- Signals present + normalized sub-scores
+- Confidence tier + uncertainty bounds
+- Known confounds
+- Falsification test design
+- Status: Exploratory / Validation / Replicated / Rejected
+
+---
+
 ## Phase 3 — Autonomous Hypothesis Generation
 
 ### Hypothesis engine protocol
@@ -208,6 +243,7 @@ For each generated hypothesis H:
 - Civilizational timeline graph with evidence ribbons.
 - Hypothesis dashboard (status, confidence, reproducibility score).
 - Discovery heatmap and “open questions” queue.
+- Dedicated “Find the 12” panel showing rank movement over time.
 
 ### UX principle
 Every visual must include: data provenance, model version, uncertainty legend, and claim tier.
@@ -257,6 +293,7 @@ Every visual must include: data provenance, model version, uncertainty legend, a
 - [ ] Create baseline null models for site alignment tests
 - [ ] Implement claims taxonomy enforcement in output pipeline
 - [ ] Launch first dashboard with explicit uncertainty legends
+- [ ] Stand up the “Find the 12” candidate ranking + validation queue
 - [ ] Publish reproducibility playbook (code, seeds, metrics, versioning)
 
 ## Success metrics
