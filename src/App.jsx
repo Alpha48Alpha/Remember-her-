@@ -44,6 +44,26 @@ export default function App() {
           ))}
         </section>
       )}
+      {trailer.neuralTech && (
+        <section className="neural-tech">
+          <h2>{trailer.neuralTech.sectionTitle}</h2>
+          <p>{trailer.neuralTech.intro}</p>
+          <p>{trailer.neuralTech.experienceDescription}</p>
+          {trailer.neuralTech.broaderTopics && trailer.neuralTech.broaderTopics.length > 0 && (
+            <ul>
+              {trailer.neuralTech.broaderTopics.map((topic, index) => (
+                <li key={index}>{topic}</li>
+              ))}
+            </ul>
+          )}
+          <p className="central-question">
+            <em>{trailer.neuralTech.centralQuestion}</em>
+          </p>
+          <blockquote className="personal-statement">
+            {trailer.neuralTech.personalStatement}
+          </blockquote>
+        </section>
+      )}
     </main>
   );
 }
