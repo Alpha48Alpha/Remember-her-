@@ -1,0 +1,148 @@
+.app-shell {
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(131, 88, 255, 0.2), transparent 35%),
+    linear-gradient(180deg, #04030a, #120d1f 60%, #04030a);
+  color: #f7f4ff;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+.hero-card {
+  width: min(960px, 100%);
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  background: rgba(9, 8, 18, 0.88);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+}
+
+.eyebrow,
+.scene-eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #b39cff;
+}
+
+.hero-card h1,
+.hero-card h2 {
+  margin: 0;
+}
+
+.tagline {
+  margin: 16px 0 8px;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0 0 24px;
+  max-width: 64ch;
+  color: #ddd6f3;
+  line-height: 1.6;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  display: grid;
+  gap: 10px;
+}
+
+.video-player {
+  width: 100%;
+  border-radius: 18px;
+  background: #000;
+}
+
+.video-title {
+  margin: 0;
+  color: #ddd6f3;
+}
+
+.fallback-player {
+  display: grid;
+  gap: 18px;
+}
+
+.fallback-stage {
+  min-height: 320px;
+  padding: 28px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.fallback-stage.is-playing {
+  transform: scale(1.01);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.fallback-stage p {
+  max-width: 38ch;
+  line-height: 1.6;
+}
+
+.player-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.play-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #120d1f;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  background: #efe8ff;
+}
+
+.scene-progress {
+  display: flex;
+  gap: 10px;
+}
+
+.scene-progress span {
+  width: 42px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.scene-progress span.is-active {
+  background: #b39cff;
+}
+
+@media (max-width: 640px) {
+  .hero-card {
+    padding: 22px;
+  }
+
+  .fallback-stage {
+    min-height: 280px;
+  }
+}
