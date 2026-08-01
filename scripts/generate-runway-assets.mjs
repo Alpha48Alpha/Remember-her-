@@ -1,7 +1,8 @@
 /**
  * generate-runway-assets.mjs
  * Uses the Runway ML SDK to generate video clips for the trailer.
- * Requires RUNWAYML_API_SECRET environment variable.
+ * When RUNWAYML_API_SECRET is not set, it writes an empty manifest so the
+ * rest of the build can still complete.
  */
 
 import fs from 'fs';
@@ -15,10 +16,22 @@ if (!fs.existsSync(OUTPUT_DIR)) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+const manifestPath = path.join(OUTPUT_DIR, 'video-manifest.json');
+
+function writeManifest(entries) {
+  fs.writeFileSync(manifestPath, JSON.stringify(entries, null, 2));
+}
+
+const manifest = [];
+writeManifest(manifest);
+
 const apiKey = process.env.RUNWAYML_API_SECRET;
 if (!apiKey) {
-  console.error('[ai:video] ERROR: RUNWAYML_API_SECRET environment variable is not set.');
-  process.exit(1);
+  console.warn(
+    '[ai:video] RUNWAYML_API_SECRET is not set; writing an empty manifest and continuing.'
+  );
+  console.log(`[ai:video] Manifest written to ${manifestPath}`);
+  process.exit(0);
 }
 
 // Dynamically import the SDK so the script fails gracefully when deps are absent.
@@ -33,15 +46,6 @@ const prompts = [
   { id: 'scene_01', text: 'A woman standing alone in a sun-lit field, cinematic, 4K' },
   { id: 'scene_02', text: 'Old photographs scattered on a wooden table, slow zoom, cinematic' },
 ];
-
-const manifest = [];
-const manifestPath = path.join(OUTPUT_DIR, 'video-manifest.json');
-
-function writeManifest(entries) {
-  fs.writeFileSync(manifestPath, JSON.stringify(entries, null, 2));
-}
-
-writeManifest(manifest);
 
 for (const prompt of prompts) {
   console.log(`[ai:video] Generating clip for "${prompt.id}"…`);
