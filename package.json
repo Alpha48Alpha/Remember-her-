@@ -8,9 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "ai:copy": "node scripts/impact-ai-sync.mjs",
+    "ai:gopro": "node scripts/gopro-ingest.mjs",
     "ai:video": "node scripts/generate-runway-assets.mjs",
     "ai:assemble": "node scripts/assemble-final-trailer.mjs",
-    "trailer:oneclick": "npm run ai:copy && npm run ai:video && npm run ai:assemble && npm run build"
+    "trailer:oneclick": "npm run ai:copy && npm run ai:gopro && npm run ai:video && npm run ai:assemble && npm run build"
   },
   "dependencies": {
     "@runwayml/sdk": "^1.4.0",

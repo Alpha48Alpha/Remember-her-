@@ -36,6 +36,11 @@ jobs:
       - name: Generate AI copy
         run: npm run ai:copy
 
+      - name: Auto back-load GoPro footage
+        env:
+          GOPRO_PATH: ${{ vars.GOPRO_PATH }}
+        run: npm run ai:gopro
+
       - name: Generate Runway video assets
         env:
           RUNWAYML_API_SECRET: ${{ secrets.RUNWAYML_API_SECRET }}
